@@ -1,0 +1,145 @@
+﻿@using CarRenting.Models.Enums;
+@using CarRenting.ViewModels;
+@model CarOwnerRegViewModel
+<form action="/CarOwner/Add" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="mb-3 col-md-6" >
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="FirstName">
+        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+    </div>
+    <div class="mb-3 col-md-6">
+        <label for="LastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="LastName">
+        <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="Email">
+           <span asp-validation-for="@Model.Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="Password">
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+        </div>
+            <div class="mb-3 col-md-6">
+                <label for="Phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="Phone">
+                <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="UserName" class="form-label">User Name</label>
+                <input type="text" class="form-control" name="UserName">
+                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="BirthDate" class="form-label">BirthDate</label>
+                <input type="date" class="form-control" name="BirthDate">
+                <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="NationalId" class="form-label">National Id</label>
+                <input type="number" class="form-control" name="NationalId">
+                <span asp-validation-for="@Model.NationalId" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label" for="ProfileImageUrl">Profile Image</label>
+                <input type="file" class="form-control" name="ProfileImageUrl"/>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="CarName" class="form-label">Car Name</label>
+                <input type="text" class="form-control" name="CarName">
+                <span asp-validation-for="@Model.CarName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="BrandName" class="form-label">Brand Name</label>
+                <input type="text" class="form-control" name="BrandName">
+                <span asp-validation-for="@Model.BrandName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Price" class="form-label">Price</label>
+                <input type="number" class="form-control" name="Price">
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Offer" class="form-label">Offer</label>
+                <input type="number" class="form-control" name="Offer">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="CarMoved" class="form-label">Car Moved</label>
+                <input type="number" class="form-control" name="CarMoved">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="ModelYear" class="form-label">Model Year</label>
+                <input type="number" class="form-control" name="ModelYear">
+                <span asp-validation-for="@Model.ModelYear" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="CarType" class="form-label">Car Type</label>
+                <select class="form-select" name="CarType" asp-items="Html.GetEnumSelectList<CarType>()">
+                </select>
+                <span asp-validation-for="@Model.CarType" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="ProvidedBy" class="form-label">Provided By</label>
+                <select class="form-select" name="ProvidedBy" asp-items="Html.GetEnumSelectList<ProvidedBy>()">
+                </select>
+                <span asp-validation-for="@Model.ProvidedBy" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="CarStatus" class="form-label">Car Status</label>
+                <select class="form-select" name="CarStatus" asp-items="Html.GetEnumSelectList<CarStatus>()">
+                </select>
+                <span asp-validation-for="@Model.CarStatus" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Availability" class="form-label">Availability</label>
+                <select class="form-select" name="Availability" asp-items="Html.GetEnumSelectList<Availability>()">
+                </select>
+                <span asp-validation-for="@Model.Availability" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="Description" class="form-label">Description</label>
+                <textarea type="text" class="form-control" name="Description"></textarea>
+            </div>
+            <div id="ImageSection" class="mt-3">
+                <label class="form-label" for="ImageUrl">Car Image</label>
+                <input type="file" class="form-control" name="ImageUrl" multiple />
+                <span asp-validation-for="@Model.ImageName" class="text-danger"></span>
+            </div>
+ @*               <button class="btn btn-success ms-2 mt-3" style="width:auto" id="AddInput">Add Another Image</button>*@
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary ms-3 mt-3" style="width:auto" id="submito">Submit</button>
+</form>
+
+@*<script type="text/javascript">
+    let submitAction = document.getElementById("submito")
+    console.log(submitAction)
+    let AddInput = document.getElementById("AddInput");
+    let imageSection = document.getElementById("ImageSection");
+
+        AddInput.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            let newLabel = document.createElement("label");
+            newLabel.setAttribute("for", "ImageUrl")
+            newLabel.setAttribute("class", "form-label mt-3")
+            let labelValue = document.createTextNode("Car Image")
+            newLabel.appendChild(labelValue)
+            imageSection.appendChild(newLabel)
+
+            let newInput = document.createElement("input");
+            newInput.setAttribute("name", "ImageUrl")
+            newInput.setAttribute("type", "file")
+            newInput.setAttribute("class", "form-control")
+            imageSection.appendChild(newInput);
+        })
+
+    </script>*@
+
+
+

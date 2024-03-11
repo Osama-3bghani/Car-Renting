@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CarImages>
+<head>
+    <link rel="stylesheet" href="/css/home.css"/>
+</head>
+<div style=" position: relative;
+  text-align: center;
+  color: white;">
+    <img style="
+     height:-webkit-fill-available;
+     width:-webkit-fill-available;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;" src="/Images/cover.jpeg" alt="Cover" />
+
+    <div style=" position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);">
+        Welcome To Our Website 
+        Here You Can Find Your Modern Car
+    </div>
+</div>
+
+    
+
+
+
+<div class="row" id="ads">
+@foreach(var items in Model )
+{
+        <div class="col-md-3 mb-3">
+
+            <div class="card rounded">
+                <div class="card-image">
+                    <span class="card-notify-badge">@items.Car.CarName</span>
+                    <span class="card-notify-year">@items.Car.ModelYear</span>
+                    <img class="img-fluid" src="/Images/@items.ImageName" alt="Alternate Text"
+                         style="width: 100%;height: 15vw; object-fit: cover;">
+                </div>
+                <div class="card-image-overlay m-auto">
+                    <span class="card-detail-badge">@items.Car.CarType</span>
+                    <span class="card-detail-badge">@items.Car.Price EGP </span>
+                    <span class="card-detail-badge">@items.Car.CarStatus</span>
+                </div>
+                <div class="card-body text-center">
+                    <div class="ad-title m-auto">
+                        <h5>@items.Car.BrandName</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+</div>
+
+

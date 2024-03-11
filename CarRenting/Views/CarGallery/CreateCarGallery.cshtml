@@ -1,0 +1,73 @@
+﻿@using CarRenting.ViewModels;
+@model CarGalleryRegViewModel
+<form action="/CarGallery/Add" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="FirstName">
+                <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="LastName">
+                <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="Email">
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="Password">
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" name="Phone">
+                <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="UserName" class="form-label">User Name</label>
+                <input type="text" class="form-control" name="UserName">
+                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="BirthDate" class="form-label">BirthDate</label>
+                <input type="date" class="form-control" name="BirthDate">
+                <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="NationalId" class="form-label">National Id</label>
+                <input type="number" class="form-control" name="NationalId">
+                <span asp-validation-for="@Model.NationalId" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label" for="ProfileImageUrl">Profile Image</label>
+                <input type="file" class="form-control" name="ProfileImageUrl" />
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="Location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="Location">
+                <span asp-validation-for="@Model.Location" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label" for="Tax_Card_Url">Tax Card</label>
+                <input type="file" class="form-control" name="Tax_Card_Url" />
+                <span asp-validation-for="@Model.Tax_Card_Url" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label" for="Commercial_Registration_Url">Commercial Registration</label>
+                <input type="file" class="form-control" name="Commercial_Registration_Url" />
+                <span asp-validation-for="@Model.Commercial_Registration_Url" class="text-danger"></span>
+            </div>
+            <div id="ImageSection" class="mt-3">
+                <label class="form-label" for="ImageUrl">Car Gallerry Images</label>
+                <input type="file" class="form-control" name="ImageUrl" multiple />
+                <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary ms-3 mt-3" style="width:auto" id="submito">Submit</button>
+</form>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CarRenting</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CarRenting.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/font-awesome/css/all.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <i class="fa fa-car fa-lg text-warning"></i>
+                    <h4 class="text-warning" style="display:inline">Car Rental</h4>
+                    </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-itme ms-5">
+                            <a href="/Customer/Register" class="nav-link text-warning">Customer</a>
+                        </li>
+                         <li class="nav-itme ms-5">
+                            <a href="/CarGallery/CreateCarGallery" class="nav-link text-warning">Car Gallery</a>
+                        </li>
+                        <li class="nav-itme ms-5">
+                            <a href="/CarOwner/Create" class="nav-link text-warning">Car Owner</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="#" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                                Login
+                            </a>
+                            <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <div class="myform bg-dark">
+                                                <form action="/Account/Login" method="post">
+                                                    <div class="mb-3 mt-4">
+                                                        <label for="Email1" class="form-label">Email address</label>
+                                                        <input type="email" class="form-control" name="Email" >
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="Password" class="form-label">Password</label>
+                                                        <input type="password" class="form-control" name="Password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
