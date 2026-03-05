@@ -3,6 +3,7 @@
     public enum RequestStatus
     {
         Confirm=1,
-        Decline=2
+        Decline=2,
+        Pending = 3
     }
 }
