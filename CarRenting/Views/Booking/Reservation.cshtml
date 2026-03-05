@@ -1,1 +1,17 @@
 ﻿@model Car
+<div class="container mt-4">
+    <h2>Reserve: @Model.CarName - @Model.BrandName</h2>
+    <p>Price: @Model.Price EGP</p>
+    <form action="/Booking/Confirm" method="post">
+        <input type="hidden" name="CarId" value="@Model.Id" />
+        <div class="mb-3">
+            <label>From</label>
+            <input type="date" name="From" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>To</label>
+            <input type="date" name="To" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+    </form>
+</div>
